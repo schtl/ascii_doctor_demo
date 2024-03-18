@@ -1,0 +1,22 @@
+= The Danger of
+:url-to: https://en.wikipedia.org/wiki/Wolpertinger
+
+This is a normal text and a test for html converting
+
+== Origins
+
+This is the {url-to}[link to the given variable]
+
+[plantuml, diagram-classes, png]   
+....
+class BlockProcessor{
+	- int id
+}
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
