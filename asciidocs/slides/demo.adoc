@@ -3,7 +3,7 @@
 :email: x.y@htl.at
 :revnumber: 1.0
 :revdate: {docdate}
-:revremark: SLIDEDEMO @ HTL Leonding
+:revremark: SLIDEDEMO @ HTL Kaindorf 
 :encoding: utf-8
 :lang: de
 :doctype: article
