@@ -3,4 +3,4 @@
 1.0.0, {docdate}: build a simple rest endpoint and deploy app to minikube/cloud
 
 
-Welcome to schtl 2024 hello uuu!
+Welcome to schtl 2024 hello uuu zzw!
