@@ -40,5 +40,5 @@ jobs:
         with:
           # GITHUB_TOKEN: ${{ github.TOKEN }}
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # branch: ${{ env.BRANCH }}
+          branch: ${{ env.BRANCH }}
           folder: ${{ env.INPUTPATH }}
