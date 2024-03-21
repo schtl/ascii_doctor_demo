@@ -1,26 +1,44 @@
-name: build adocs
+name: Docs
 
 on:
   push:
     branches:
-    - main
+      - 'main'
+    paths:
+      - asciidocs/**
+  workflow_dispatch:
+permissions:
+  contents: write
 jobs:
-  adoc_build:
+  build:
+    name: Build & Publish 🚀
     runs-on: ubuntu-latest
-    name: asciidoctor -D docs -r asciidoctor-diagram --backend=html5 -o index.html -a toc2 demo.adoc 
+    env:
+      INPUTPATH: asciidocs
+      SLIDES: true
+      BRANCH: gh-pages
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Get build container
-      id: adocbuild
-      uses: schtl/ascii_doctor_demo@master
-      with:
-          program: "asciidoctor -r asciidoctor-diagram --backend=html5 -o index.html -a toc2 demo.adoc"
-    - name: Print execution time
-      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-    - name: Deploy docs to ghpages
-      uses: schtl/ascii_doctor_demo@v4
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: gh-pages
-        publish_dir: ./
+      - uses: actions/checkout@v4
+
+      #- name: install packages
+      #  uses: awalsh128/cache-apt-pkgs-action@latest
+      #  with:
+      #    packages:  asciidoctor graphviz
+      #    version: 1.0
+
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
+
+      - name: run docker
+        run: |
+          sudo ${{ env.INPUTPATH }}/scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.SLIDES }}
+          tree
+
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          # GITHUB_TOKEN: ${{ github.TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}
+          folder: ${{ env.INPUTPATH }}
