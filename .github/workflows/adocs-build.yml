@@ -39,6 +39,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           # GITHUB_TOKEN: ${{ github.TOKEN }}
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ env.BRANCH }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # branch: ${{ env.BRANCH }}
           folder: ${{ env.INPUTPATH }}
