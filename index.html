@@ -436,14 +436,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Übung Minikube-Demo</h1>
 <div class="details">
 <span id="author" class="author">1.0.0, 2024-03-23: build a simple rest endpoint and deploy app to minikube/cloud</span><br>
 </div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">1. Overview</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>Welcome to schtl 2024 hello uuu zzw 8898 10!</p>
 </div>
@@ -451,9 +459,85 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>This is a new line from 240323</p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First we create a simple REST-endpoint with quarkus.</p>
+</li>
+<li>
+<p>We create an uber-jar.</p>
+</li>
+<li>
+<p>We build a docker image with the jar-filee.</p>
+</li>
+<li>
+<p>We push the docker image to an image registry (ghcr.io).</p>
+</li>
+<li>
+<p>We deploy the docker image to minikube.</p>
+</li>
+</ol>
+</div>
+<details>
+<summary class="title">result</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------&lt; org.apache.maven:standalone-pom &gt;-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- quarkus:3.7.3:create (default-cli) @ standalone-pom ---
+[INFO] Looking for the newly published extensions in registry.quarkus.io
+[INFO] -----------
+[INFO] selected extensions:
+- io.quarkus:quarkus-smallrye-health
+- io.quarkus:quarkus-resteasy-reactive
+
+[INFO]
+applying codestarts...
+[INFO] 📚 java
+🔨 maven
+📦 quarkus
+📝 config-properties
+🔧 tooling-dockerfiles
+🔧 tooling-maven-wrapper
+🚀 resteasy-reactive-codestart
+🚀 smallrye-health-codestart
+[INFO]
+-----------
+[SUCCESS] ✅  quarkus project has been successfully generated in:
+--&gt; /Users/stuetz/work/_delete/minikube-demo
+-----------
+[INFO]
+[INFO] ========================================================================================
+[INFO] Your new application has been created in /Users/stuetz/work/_delete/minikube-demo
+[INFO] Navigate into this directory and launch your application with mvn quarkus:dev
+[INFO] Your application will be accessible on http://localhost:8080
+[INFO] ========================================================================================
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.232 s
+[INFO] Finished at: 2024-02-19T08:12:54+01:00
+[INFO] ------------------------------------------------------------------------</pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-23 11:21:01 UTC
+Last updated 2024-03-23 11:24:58 UTC
 </div>
 </div>
 </body>
