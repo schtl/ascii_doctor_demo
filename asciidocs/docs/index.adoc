@@ -6,3 +6,58 @@
 Welcome to schtl 2024 hello uuu zzw 8898 10!
 
 This is a new line from 240323
+
+== Overview
+. First we create a simple REST-endpoint with quarkus.
+. We create an uber-jar.
+. We build a docker image with the jar-filee.
+. We push the docker image to an image registry (ghcr.io).
+. We deploy the docker image to minikube.
+
+.result
+[%collapsible]
+====
+----
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- quarkus:3.7.3:create (default-cli) @ standalone-pom ---
+[INFO] Looking for the newly published extensions in registry.quarkus.io
+[INFO] -----------
+[INFO] selected extensions:
+- io.quarkus:quarkus-smallrye-health
+- io.quarkus:quarkus-resteasy-reactive
+
+[INFO]
+applying codestarts...
+[INFO] 📚 java
+🔨 maven
+📦 quarkus
+📝 config-properties
+🔧 tooling-dockerfiles
+🔧 tooling-maven-wrapper
+🚀 resteasy-reactive-codestart
+🚀 smallrye-health-codestart
+[INFO]
+-----------
+[SUCCESS] ✅  quarkus project has been successfully generated in:
+--> /Users/stuetz/work/_delete/minikube-demo
+-----------
+[INFO]
+[INFO] ========================================================================================
+[INFO] Your new application has been created in /Users/stuetz/work/_delete/minikube-demo
+[INFO] Navigate into this directory and launch your application with mvn quarkus:dev
+[INFO] Your application will be accessible on http://localhost:8080
+[INFO] ========================================================================================
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.232 s
+[INFO] Finished at: 2024-02-19T08:12:54+01:00
+[INFO] ------------------------------------------------------------------------
+----
+====
